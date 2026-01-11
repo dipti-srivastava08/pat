@@ -25,7 +25,7 @@ body{
   color:white;
 }
 
-/* 💖 Floating hearts */
+/* Floating hearts */
 .heart{
   position:absolute;
   font-size:18px;
@@ -39,18 +39,17 @@ body{
   100%{transform:translateY(0)}
 }
 
-/* 🌸 Main card */
+/* Main card */
 .card{
-  background:rgba(255,255,255,0.05);
-  backdrop-filter:blur(8px);
-  border-radius:20px;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(10px);
+  border-radius:22px;
   padding:40px 30px;
   text-align:center;
-  box-shadow:0 0 30px rgba(255,105,180,0.2);
+  box-shadow:0 0 30px rgba(255,105,180,0.3);
   animation: fadeIn 2s forwards;
 }
 
-/* ✨ Text */
 h1{
   font-family:'Great Vibes',cursive;
   font-size:52px;
@@ -64,6 +63,24 @@ p{
   opacity:0;
   animation: fadeUp 2s forwards;
   animation-delay:1.5s;
+}
+
+/* Music button */
+button{
+  margin-top:25px;
+  padding:10px 22px;
+  border:none;
+  border-radius:25px;
+  background:#ff69b4;
+  color:white;
+  font-size:14px;
+  cursor:pointer;
+  animation: fadeUp 2s forwards;
+  animation-delay:2.5s;
+}
+
+button:hover{
+  background:#ff85c1;
 }
 
 /* Animations */
@@ -86,7 +103,7 @@ p{
 
 <body>
 
-<!-- 💖 Floating hearts -->
+<!-- Floating hearts -->
 <script>
 for(let i=0;i<15;i++){
   const h=document.createElement("div");
@@ -99,20 +116,27 @@ for(let i=0;i<15;i++){
 }
 </script>
 
-<!-- 🎶 Background Music -->
-<audio autoplay loop>
+<!-- Background Music -->
+<audio id="bgMusic" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<!-- 🌸 Content -->
 <div class="card">
   <h1>6 Days to Your Birthday 🎂</h1>
   <p>
-    just some days more then,<br>
-    every moment will whisper your name
-    Mr. Favourite ❤️
+    Every moment feels softer,<br>
+    because it leads to you ❤️
   </p>
+
+  <button onclick="playMusic()">Click to Start the Magic 🎶</button>
 </div>
+
+<script>
+function playMusic(){
+  const music=document.getElementById("bgMusic");
+  music.play();
+}
+</script>
 
 </body>
 </html>
