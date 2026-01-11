@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>6 Days to Your Birthday ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  height:100vh;
+  background:linear-gradient(135deg,#12001a,#000);
+  font-family:'Poppins',sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+  color:white;
+}
+
+/* 💖 Floating hearts */
+.heart{
+  position:absolute;
+  font-size:18px;
+  animation: float 6s infinite ease-in-out;
+  opacity:0.5;
+}
+
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-60px)}
+  100%{transform:translateY(0)}
+}
+
+/* 🌸 Main card */
+.card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(8px);
+  border-radius:20px;
+  padding:40px 30px;
+  text-align:center;
+  box-shadow:0 0 30px rgba(255,105,180,0.2);
+  animation: fadeIn 2s forwards;
+}
+
+/* ✨ Text */
+h1{
+  font-family:'Great Vibes',cursive;
+  font-size:52px;
+  color:#ffb6c1;
+  animation: glow 3s infinite alternate;
+}
+
+p{
+  margin-top:18px;
+  font-size:17px;
+  opacity:0;
+  animation: fadeUp 2s forwards;
+  animation-delay:1.5s;
+}
+
+/* Animations */
+@keyframes fadeIn{
+  from{opacity:0; transform:scale(0.9)}
+  to{opacity:1; transform:scale(1)}
+}
+
+@keyframes glow{
+  from{text-shadow:0 0 10px #ff69b4}
+  to{text-shadow:0 0 25px #ffb6c1}
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(20px)}
+  to{opacity:1; transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 💖 Floating hearts -->
+<script>
+for(let i=0;i<15;i++){
+  const h=document.createElement("div");
+  h.className="heart";
+  h.innerText="❤️";
+  h.style.left=Math.random()*100+"vw";
+  h.style.top=Math.random()*100+"vh";
+  h.style.animationDuration=4+Math.random()*4+"s";
+  document.body.appendChild(h);
+}
+</script>
+
+<!-- 🎶 Background Music -->
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- 🌸 Content -->
+<div class="card">
+  <h1>6 Days to Your Birthday 🎂</h1>
+  <p>
+    just some days more then,<br>
+    every moment will whisper your name
+    Mr. Favourite ❤️
+  </p>
+</div>
+
+</body>
+</html>
